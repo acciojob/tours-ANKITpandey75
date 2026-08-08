@@ -19,17 +19,7 @@ function App() {
 
     try {
       const response = await fetch(url);
-
-      if (!response.ok) {
-        throw new Error('Could not load tours');
-      }
-
       const data = await response.json();
-
-      if (!Array.isArray(data)) {
-        throw new Error('Invalid tour data');
-      }
-
       setTours(data);
     } catch (error) {
       console.log(error);
